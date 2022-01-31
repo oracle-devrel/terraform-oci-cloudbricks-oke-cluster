@@ -65,7 +65,7 @@ locals {
   release = "1.0"
   # Subnet OCID local accessors
   lbaas_subnet_ocid    = length(data.oci_core_subnets.LBAASSUBNET.subnets) > 0 ? data.oci_core_subnets.LBAASSUBNET.subnets[0].id : null
-  nodepool_subnet_ocid = length(data.oci_core_subnets.ENDPOINTSUBNET.subnets) > 0 ? data.oci_core_subnets.LBAASSUBNET.subnets[0].id : null
+  nodepool_subnet_ocid = length(data.oci_core_subnets.ENDPOINTSUBNET.subnets) > 0 ? data.oci_core_subnets.ENDPOINTSUBNET.subnets[0].id : null
 
   # Compartment OCID Local Accessor
   compartment_id    = lookup(data.oci_identity_compartments.COMPARTMENTS.compartments[0], "id")
